@@ -2,7 +2,8 @@ package rbac
 
 import (
 	"github.com/casbin/casbin"
-	"gitlab.com/vitams/qvard/modules/db"
+	"github.com/casbin/gorm-adapter"
+	"github.com/vmpartner/go-pgdb"
 )
 
 var RBAC *casbin.Enforcer
@@ -16,7 +17,7 @@ func New() *casbin.Enforcer {
 		return RBAC
 	}
 	a := gormadapter.NewAdapter("postgres", db.GetLInk(), true)
-	RBAC = casbin.NewEnforcer("./modules/rbac/rbac_model.conf", a)
+	RBAC = casbin.NewEnforcer("rbac_model.conf", a)
 
 	return RBAC
 }
@@ -26,12 +27,4 @@ func Check(email string, rule string, perm string) bool {
 		return false
 	}
 	return true
-}
-
-func GetPermissionsForUser(email string) [][]string {
-	return RBAC.GetPermissionsForUser(email)
-}
-
-func GetRolesForUser(email string) []string {
-	return RBAC.GetRolesForUser(email)
 }

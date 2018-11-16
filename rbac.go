@@ -13,7 +13,23 @@ func New() *casbin.Enforcer {
 		return RBAC
 	}
 	a := gormadapter.NewAdapter("postgres", pgdb.GetLInk(), true)
-	RBAC = casbin.NewEnforcer("rbac_model.conf", a)
+	p := `
+		[request_definition]
+		r = sub, obj, act
+		
+		[policy_definition]
+		p = sub, obj, act
+		
+		[role_definition]
+		g = _, _
+		
+		[policy_effect]
+		e = some(where (p.eft == allow))
+		
+		[matchers]
+		m = (g(r.sub, p.sub) && r.obj == p.obj && r.act == p.act) || g(r.sub, "admin")
+	`
+	RBAC = casbin.NewEnforcer(casbin.NewModel(p), a)
 
 	return RBAC
 }

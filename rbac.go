@@ -8,10 +8,6 @@ import (
 
 var RBAC *casbin.Enforcer
 
-func init() {
-	RBAC = New()
-}
-
 func New() *casbin.Enforcer {
 	if RBAC != nil {
 		return RBAC

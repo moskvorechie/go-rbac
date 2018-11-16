@@ -16,7 +16,7 @@ func New() *casbin.Enforcer {
 	if RBAC != nil {
 		return RBAC
 	}
-	a := gormadapter.NewAdapter("postgres", db.GetLInk(), true)
+	a := gormadapter.NewAdapter("postgres", pgdb.GetLInk(), true)
 	RBAC = casbin.NewEnforcer("rbac_model.conf", a)
 
 	return RBAC

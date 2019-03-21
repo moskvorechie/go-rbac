@@ -1,4 +1,4 @@
-module github.com/vmpartner/go-rbac
+module github.com/vmpartner/go-rbac/v2
 
 require (
 	github.com/casbin/gorm-adapter v0.0.0-20171006093545-e56c6daebd5e // indirect

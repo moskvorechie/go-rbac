@@ -3,7 +3,7 @@ package rbac
 import (
 	"github.com/casbin/casbin"
 	"github.com/casbin/gorm-adapter"
-	"github.com/vmpartner/go-pgdb"
+	pgdb "github.com/vmpartner/go-pgdb/v3"
 )
 
 var RBAC *casbin.Enforcer
@@ -35,6 +35,9 @@ func New() *casbin.Enforcer {
 }
 
 func Check(email string, rule string, perm string) bool {
+	if RBAC == nil {
+		RBAC = New()
+	}
 	if !RBAC.Enforce(email, rule, perm) {
 		return false
 	}

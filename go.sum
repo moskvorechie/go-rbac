@@ -42,6 +42,8 @@ github.com/vmpartner/go-pgdb v1.0.1 h1:XSceWKC+oRzjsJRO9bEp9g7XIPDqNSiA3fgS/fQSK
 github.com/vmpartner/go-pgdb v1.0.1/go.mod h1:t9LkQUMZyEOmz+1YQlXLQrsQtfpAxEP1Si1qH00cJr4=
 github.com/vmpartner/go-pgdb/v3 v3.0.1 h1:nq6+CUW0dQt1Hievh/eN7AlxIfYx+B7AbvxVhpRNsJc=
 github.com/vmpartner/go-pgdb/v3 v3.0.1/go.mod h1:4JjfgiXki7VSITe749slnGRINN/g46U5/Kl9X2IdA/g=
+github.com/vmpartner/go-pgdb/v4 v4.0.0 h1:kqd8TgX1oYqYlyuNfwiIfbndKdg0pDgdJPXrK5sSIbk=
+github.com/vmpartner/go-pgdb/v4 v4.0.0/go.mod h1:xJjBGzQuQ27QbsqCJHwI+0biug1q9fo4pEAk+4oVKsw=
 github.com/wendal/errors v0.0.0-20130201093226-f66c77a7882b/go.mod h1:Q12BUT7DqIlHRmgv3RskH+UCM/4eqVMgI0EMmlSpAXc=
 golang.org/x/crypto v0.0.0-20181127143415-eb0de9b17e85/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
 golang.org/x/net v0.0.0-20181114220301-adae6a3d119a/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=

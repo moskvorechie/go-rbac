@@ -8,3 +8,5 @@ require (
 	github.com/vmpartner/go-pgdb/v5 v5.0.2
 	google.golang.org/appengine v1.6.1 // indirect
 )
+
+go 1.13

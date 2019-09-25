@@ -6,3 +6,5 @@ require (
 	github.com/vmpartner/go-pgdb/v3 v3.0.1 // indirect
 	github.com/vmpartner/go-pgdb/v4 v4.0.0 // indirect
 )
+
+go 1.13

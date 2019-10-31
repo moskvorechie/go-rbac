@@ -3,7 +3,7 @@ package rbac
 import (
 	"github.com/casbin/casbin"
 	"github.com/casbin/gorm-adapter"
-	"github.com/vmpartner/go-pgdb/v5"
+	"github.com/vmpartner/go-pgdb/v6"
 )
 
 var RBAC *casbin.Enforcer

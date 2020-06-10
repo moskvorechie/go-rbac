@@ -1,4 +1,4 @@
-module github.com/vmpartner/go-rbac/v6
+module github.com/moskvorechie/go-rbac/v6
 
 require (
 	github.com/Knetic/govaluate v3.0.0+incompatible // indirect
@@ -10,4 +10,4 @@ require (
 	google.golang.org/appengine v1.6.1 // indirect
 )
 
-go 1.13
+go 1.14

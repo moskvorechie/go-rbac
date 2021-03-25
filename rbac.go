@@ -3,16 +3,17 @@ package rbac
 import (
 	"github.com/casbin/casbin"
 	"github.com/casbin/gorm-adapter"
-	"github.com/vmpartner/go-pgdb/v6"
 )
 
 var RBAC *casbin.Enforcer
+var dbLink string
 
-func New() *casbin.Enforcer {
+func New(dbSrc string) *casbin.Enforcer {
+	dbLink = dbSrc
 	if RBAC != nil {
 		return RBAC
 	}
-	a := gormadapter.NewAdapter("postgres", pgdb.GetLInk(), true)
+	a := gormadapter.NewAdapter("postgres", dbLink, true)
 	p := `
 		[request_definition]
 		r = sub, obj, act
@@ -36,7 +37,7 @@ func New() *casbin.Enforcer {
 
 func Check(email string, rule string, perm string) bool {
 	if RBAC == nil {
-		RBAC = New()
+		RBAC = New(dbLink)
 	}
 	if !RBAC.Enforce(email, rule, perm) {
 		return false
